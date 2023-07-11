@@ -1,21 +1,16 @@
 import React from "react";
 
-class Card extends React.Component {
-  render() {
-    return (
-      <div className="card card-block mx-2" style={{ 'minWidth': 300 + 'px' }}>
-        {
-          this.props.menus.map(
-            (menu, index) => (
-              <div>
-                <p className="card-text">{menu}</p>
-              </div>
-            )
+const Card = ({ menus }) => {
+  return (
+    <div className="card card-block mx-2" style={{ 'minWidth': 300 + 'px' }}>
+      {
+        menus.map(menu => (
+            <div key={menu} className="card-text">{menu}</div>
           )
-        }
-      </div>
-    );
-  }
+        )
+      }
+    </div>
+  );
 }
 
 export default Card;

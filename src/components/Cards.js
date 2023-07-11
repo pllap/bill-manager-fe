@@ -2,48 +2,45 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Card from './Card';
 
-class Cards extends React.Component {
-  render() {
-    const cards = [
+const Cards = () => {
+  const cards = [
+    {
+      menus: [
+        'Bone',
+        'Coke'
+      ]
+    },
+    {
+      menus: [
+        'Pizza',
+        'Coke'
+      ]
+    },
+    {
+      menus: [
+        'Boneless',
+        'Soda'
+      ]
+    },
+    {
+      menus: [
+        'Bone'
+      ]
+    }
+  ];
+  return (
+    <Container className="d-flex" style={{ 'height': 100 + 'px' }}>
       {
-        menus: [
-          'Bone',
-          'Coke'
-        ]
-      },
-      {
-        menus: [
-          'Pizza',
-          'Coke'
-        ]
-      },
-      {
-        menus: [
-          'Boneless',
-          'Soda'
-        ]
-      },
-      {
-        menus: [
-          'Bone'
-        ]
+        cards.map(
+          (card, index) => {
+            return (
+              <Card key={index} menus={card.menus} />
+            );
+          }
+        )
       }
-    ];
-    console.log(this.props);
-    return (
-      <Container className="d-flex" style={{'height': 100 + 'px'}}>
-        {
-          cards.map(
-            (card, index) => {
-              return (
-                <Card key={index} menus={card.menus} />
-              );
-            }
-          )
-        }
-      </Container>
-    )
-  }
+    </Container>
+  );
 }
 
 export default Cards;
